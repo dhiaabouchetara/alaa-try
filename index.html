@@ -79,7 +79,7 @@ label {
 
 <!-- اختيار نوع المنتج -->
 <label>اختر نوع العطر</label>
-<select class="product-select" onchange="changeProductImage(this.value)">
+<select name="نوع العطر" class="product-select" onchange="changeProductImage(this.value)">
     <option value="black">Black</option>
     <option value="white">White</option>
     <option value="pink">Pink</option>
@@ -98,15 +98,77 @@ label {
 
 <input type="hidden" name="_subject" value="طلب جديد - Gala Parfum">
 <input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_autoresponse" value="يرجى الانتظار حتى نتصل بك لتأكيد الطلب">
+<input type="hidden" name="_next" value="https://dhiaabouchetara.github.io/landing-page/thanks.html">
 
 <label>الاسم الكامل</label>
 <input type="text" name="الاسم الكامل" required>
 
 <label>رقم الهاتف</label>
-<input type="tel" name="رقم الهاتف" required pattern="^0[567][0-9]{8}$">
+<input type="tel" name="رقم الهاتف" required pattern="^0[567][0-9]{8}$" placeholder="مثال: 0550123456">
 
 <label>الولاية</label>
-<input type="text" name="الولاية" required>
+<select name="الولاية" required>
+<option value="">اختر ولايتك</option>
+<option>01 - أدرار</option>
+<option>02 - الشلف</option>
+<option>03 - الأغواط</option>
+<option>04 - أم البواقي</option>
+<option>05 - باتنة</option>
+<option>06 - بجاية</option>
+<option>07 - بسكرة</option>
+<option>08 - بشار</option>
+<option>09 - البليدة</option>
+<option>10 - البويرة</option>
+<option>11 - تمنراست</option>
+<option>12 - تبسة</option>
+<option>13 - تلمسان</option>
+<option>14 - تيارت</option>
+<option>15 - تيزي وزو</option>
+<option>16 - الجزائر</option>
+<option>17 - الجلفة</option>
+<option>18 - جيجل</option>
+<option>19 - سطيف</option>
+<option>20 - سعيدة</option>
+<option>21 - سكيكدة</option>
+<option>22 - سيدي بلعباس</option>
+<option>23 - عنابة</option>
+<option>24 - قالمة</option>
+<option>25 - قسنطينة</option>
+<option>26 - المدية</option>
+<option>27 - مستغانم</option>
+<option>28 - المسيلة</option>
+<option>29 - معسكر</option>
+<option>30 - ورقلة</option>
+<option>31 - وهران</option>
+<option>32 - البيض</option>
+<option>33 - إليزي</option>
+<option>34 - برج بوعريريج</option>
+<option>35 - بومرداس</option>
+<option>36 - الطارف</option>
+<option>37 - تندوف</option>
+<option>38 - تسمسيلت</option>
+<option>39 - الوادي</option>
+<option>40 - خنشلة</option>
+<option>41 - سوق أهراس</option>
+<option>42 - تيبازة</option>
+<option>43 - ميلة</option>
+<option>44 - عين الدفلى</option>
+<option>45 - النعامة</option>
+<option>46 - عين تموشنت</option>
+<option>47 - غرداية</option>
+<option>48 - غليزان</option>
+<option>49 - تيميمون</option>
+<option>50 - برج باجي مختار</option>
+<option>51 - أولاد جلال</option>
+<option>52 - بني عباس</option>
+<option>53 - عين صالح</option>
+<option>54 - عين قزام</option>
+<option>55 - تقرت</option>
+<option>56 - جانت</option>
+<option>57 - المغير</option>
+<option>58 - المنيعة</option>
+</select>
 
 <label>البلدية</label>
 <input type="text" name="البلدية" required>
@@ -119,14 +181,13 @@ label {
 </select>
 
 <button type="submit">تأكيد الطلب</button>
-</form>
 
+</form>
 </div>
 
 <script>
 function changeProductImage(type) {
     var img = document.getElementById("productImage");
-
     if (type === "black") {
         img.src = "black.jpg";
     } else if (type === "white") {
